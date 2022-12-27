@@ -6,8 +6,8 @@ COPY requirements.txt /requirements.txt
 
 RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /Mdiskautofilter-V5
-WORKDIR /Mdiskautofilter-V5
+RUN mkdir /Direct-Link-Generator-
+WORKDIR /Direct-Link-Generator-
 COPY start.sh /start.sh
 CMD ["/bin/bash", "/start.sh"]
 
