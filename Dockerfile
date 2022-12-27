@@ -8,7 +8,7 @@ RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 RUN mkdir /Direct-Link-Generator-
 WORKDIR /Direct-Link-Generator-
-COPY start.sh /start.sh
+COPY vars.py /vars.py
 CMD ["/bin/bash", "/start.sh"]
 
 
