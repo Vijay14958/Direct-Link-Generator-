@@ -1,10 +1,14 @@
 FROM python:3.8-slim-buster
-WORKDIR /app
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+RUN apt update && apt upgrade -y
+RUN apt install git -y
+COPY requirements.txt /requirements.txt
 
-COPY . .
+RUN cd /
+RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+RUN mkdir /Mdiskautofilter-V5
+WORKDIR /Mdiskautofilter-V5
+COPY start.sh /start.sh
+CMD ["/bin/bash", "/start.sh"]
 
-CMD python3 main.py
 
